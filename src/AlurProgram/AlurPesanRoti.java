@@ -53,7 +53,7 @@ public class AlurPesanRoti {
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
                     if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
-                    }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]")){
+                    }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")){
                         System.out.println("Input harus angka!");
                     }else{
                         break;
