@@ -110,6 +110,7 @@ public class AlurPesanRoti {
                 break;
             } else if(AlurPesanRoti.variant.equals("3")){
                 System.out.println("Mohon Maaf, untuk sementara varian 3 belum tersedia");
+                break;
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
             }
@@ -139,8 +140,10 @@ public class AlurPesanRoti {
                 break;
             } else if(AlurPesanRoti.variant.equals("2")){
                 System.out.println("Mohon Maaf, untuk sementara varian 2 belum tersedia");
+                break;
             }else if(AlurPesanRoti.variant.equals("3")){
                 System.out.println("Mohon Maaf, untuk sementara varian 3 belum tersedia");
+                break;
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
             }
