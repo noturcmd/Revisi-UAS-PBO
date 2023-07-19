@@ -12,6 +12,7 @@ import static java.lang.String.format;
 public class AlurPesanRoti {
     static String variant;
     static boolean isContinue4 = true;
+    static boolean isContinue5 = true;
     static BahanYangDibutuhkanRotiManis bahanRotiManis = new BahanYangDibutuhkanRotiManis();
     static BahanYangDibutuhkanRotiTawar bahanRotiTawar = new BahanYangDibutuhkanRotiTawar();
     static BahanYangDibutuhkanPizza bahanPizza = new BahanYangDibutuhkanPizza();
@@ -32,7 +33,10 @@ public class AlurPesanRoti {
             } else if (AlurPesanRoti.variant.equals("1")) {
                 Tampilan.setVarianRoti(AlurPesanRoti.variant);
                 Tampilan.jenisPesananVarian.add(Integer.parseInt(Tampilan.getVarianRoti()));
-                while(true) {
+                if(isContinue5 == false){
+                    isContinue5 = true;
+                }
+                while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
                     if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
@@ -40,17 +44,20 @@ public class AlurPesanRoti {
                     }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")){
                         System.out.println("Input jumlah harus angka!");
                     }else{
-                        break;
+                        isContinue5 = false;
                     }
                 }
                 Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
                 Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsRotiManisVarian1.hitungHargaTotalBulat());
                 Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiManis.totalTepungTerigu(), bahanRotiManis.totalGulaPasir(), bahanRotiManis.totalButter(), bahanRotiManis.totalRagi(), bahanRotiManis.totalSusuBubuk(), bahanRotiManis.totalSusuCair(), bahanRotiManis.totalTelur(), bahanRotiManis.totalEsBatu(), bahanTopfilRotmanv1.totalBahanDibutuhkan()));
-                break;
+                inputContinue2();
             } else if (AlurPesanRoti.variant.equals("2")) {
                 Tampilan.setVarianRoti(AlurPesanRoti.variant);
                 Tampilan.jenisPesananVarian.add(Integer.parseInt(Tampilan.getVarianRoti()));
-                while(true) {
+                if(isContinue5 == false){
+                    isContinue5 = true;
+                }
+                while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
                     if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
@@ -58,22 +65,34 @@ public class AlurPesanRoti {
                     }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")){
                         System.out.println("Input harus angka!");
                     }else{
-                        break;
+                        isContinue5 = false;
                     }
                 }
                 Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
                 Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsRotiManisVarian2.hitungHargaTotalBulat());
                 Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiManis.totalTepungTerigu(), bahanRotiManis.totalGulaPasir(), bahanRotiManis.totalButter(), bahanRotiManis.totalRagi(), bahanRotiManis.totalSusuBubuk(), bahanRotiManis.totalSusuCair(), bahanRotiManis.totalTelur(), bahanRotiManis.totalEsBatu(), bahanTopfilRotmanv2.totalBahanDibutuhkan()));
-                break;
+                inputContinue2();
             } else if(AlurPesanRoti.variant.equals("3")){
                 Tampilan.setVarianRoti(AlurPesanRoti.variant);
                 Tampilan.jenisPesananVarian.add(Integer.parseInt(Tampilan.getVarianRoti()));
-                System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
-                Tampilan.setJumlahRoti(Tampilan.inputUser.next());
+                if(isContinue5 == false){
+                    isContinue5 = true;
+                }
+                while(isContinue5) {
+                    System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
+                    Tampilan.setJumlahRoti(Tampilan.inputUser.next());
+                    if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
+                        System.out.println("Input tidak boleh negatif atau nol!");
+                    }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")){
+                        System.out.println("Input harus angka!");
+                    }else{
+                        isContinue5 = false;
+                    }
+                }
                 Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
                 Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsRotiManisVarian3.hitungHargaTotalBulat());
                 Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiManis.totalTepungTerigu(), bahanRotiManis.totalGulaPasir(), bahanRotiManis.totalButter(), bahanRotiManis.totalRagi(), bahanRotiManis.totalSusuBubuk(), bahanRotiManis.totalSusuCair(), bahanRotiManis.totalTelur(), bahanRotiManis.totalEsBatu(), bahanTopfilRotmanv3.totalBahanDibutuhkan()));
-                break;
+                inputContinue2();
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
             }break;
@@ -88,30 +107,48 @@ public class AlurPesanRoti {
             } else if (AlurPesanRoti.variant.equals("1")) {
                 Tampilan.setVarianRoti(AlurPesanRoti.variant);
                 Tampilan.jenisPesananVarian.add(Integer.parseInt(Tampilan.getVarianRoti()));
-                System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
-                Tampilan.setJumlahRoti(Tampilan.inputUser.next());
-                Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
-                Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsRotiTawarVarian1.hitungHargaTotalBulat());
-                Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiTawar.totalTepungTerigu(), bahanRotiTawar.totalGulaPasir(), bahanRotiTawar.totalButter(), bahanRotiTawar.totalRagi(), bahanRotiTawar.totalSusuBubuk(), bahanRotiTawar.totalSusuCair(), bahanRotiTawar.totalTelur(), bahanRotiTawar.totalEsBatu(), bahanTopFilRotarv1.totalBahanDibutuhkan()));
-                break;
-            } else if (AlurPesanRoti.variant.equals("2")) {
-                Tampilan.setVarianRoti(AlurPesanRoti.variant);
-                Tampilan.jenisPesananVarian.add(Integer.parseInt(Tampilan.getVarianRoti()));
-                while(true) {
+                if(isContinue5 == false){
+                    isContinue5 = true;
+                }
+                while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
                     if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
+                    }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")){
+                        System.out.println("Input harus angka!");
                     }else{
-                        break;
+                        isContinue5 = false;
+                    }
+                }
+                Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
+                Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsRotiTawarVarian1.hitungHargaTotalBulat());
+                Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiManis.totalTepungTerigu(), bahanRotiManis.totalGulaPasir(), bahanRotiManis.totalButter(), bahanRotiManis.totalRagi(), bahanRotiManis.totalSusuBubuk(), bahanRotiManis.totalSusuCair(), bahanRotiManis.totalTelur(), bahanRotiManis.totalEsBatu(), bahanTopfilRotmanv3.totalBahanDibutuhkan()));
+                inputContinue2();
+            } else if (AlurPesanRoti.variant.equals("2")) {
+                Tampilan.setVarianRoti(AlurPesanRoti.variant);
+                Tampilan.jenisPesananVarian.add(Integer.parseInt(Tampilan.getVarianRoti()));
+                if(isContinue5 == false){
+                    isContinue5 = true;
+                }
+                while(isContinue5) {
+                    System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
+                    Tampilan.setJumlahRoti(Tampilan.inputUser.next());
+                    if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
+                        System.out.println("Input tidak boleh negatif atau nol!");
+                    }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")){
+                        System.out.println("Input harus angka!");
+                    }else{
+                        isContinue5 = false;
                     }
                 }
                 Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
                 Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsRotiTawarVarian2.hitungHargaTotalBulat());
-                Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiTawar.totalTepungTerigu(), bahanRotiTawar.totalGulaPasir(), bahanRotiTawar.totalButter(), bahanRotiTawar.totalRagi(), bahanRotiTawar.totalSusuBubuk(), bahanRotiTawar.totalSusuCair(), bahanRotiTawar.totalTelur(), bahanRotiTawar.totalEsBatu(), bahanTopFilRotarv2.totalBahanDibutuhkan()));
-                break;
+                Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiManis.totalTepungTerigu(), bahanRotiManis.totalGulaPasir(), bahanRotiManis.totalButter(), bahanRotiManis.totalRagi(), bahanRotiManis.totalSusuBubuk(), bahanRotiManis.totalSusuCair(), bahanRotiManis.totalTelur(), bahanRotiManis.totalEsBatu(), bahanTopfilRotmanv3.totalBahanDibutuhkan()));
+                inputContinue2();
             } else if(AlurPesanRoti.variant.equals("3")){
                 System.out.println("Mohon Maaf, untuk sementara varian 3 belum tersedia");
+                jenisPesananRoti.remove("tawar");
                 inputContinue2();
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
@@ -128,24 +165,31 @@ public class AlurPesanRoti {
             } else if (AlurPesanRoti.variant.equals("1")) {
                 Tampilan.setVarianRoti(AlurPesanRoti.variant);
                 Tampilan.jenisPesananVarian.add(Integer.parseInt(Tampilan.getVarianRoti()));
-                while(true) {
+                if(isContinue5 == false){
+                    isContinue5 = true;
+                }
+                while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
                     if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
+                    }else if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")){
+                        System.out.println("Input harus angka!");
                     }else{
-                        Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
-                        Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsPizzaVarian1.hitungHargaTotalBulat());
-                        break;
+                        isContinue5 = false;
                     }
                 }
-                Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanPizza.totalTepungTerigu(), bahanPizza.totalGulaPasir(), bahanPizza.totalButter(), bahanPizza.totalRagi(), bahanPizza.totalSusuBubuk(), bahanPizza.totalSusuCair(), bahanPizza.totalTelur(), bahanPizza.totalEsBatu(), bahanTopFilPizzav1.totalBahanDibutuhkan()));
-                break;
+                Tampilan.jumlahPesananRoti.add(Integer.parseInt(Tampilan.getJumlahRoti()));
+                Tampilan.kumpulanBiaya.add(Integer.parseInt(Tampilan.getJumlahRoti()) * PcsPizzaVarian1.hitungHargaTotalBulat());
+                Tampilan.bahanAdonan.add(format("- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n- %s\n%s", bahanRotiManis.totalTepungTerigu(), bahanRotiManis.totalGulaPasir(), bahanRotiManis.totalButter(), bahanRotiManis.totalRagi(), bahanRotiManis.totalSusuBubuk(), bahanRotiManis.totalSusuCair(), bahanRotiManis.totalTelur(), bahanRotiManis.totalEsBatu(), bahanTopfilRotmanv3.totalBahanDibutuhkan()));
+                inputContinue2();
             } else if(AlurPesanRoti.variant.equals("2")){
                 System.out.println("Mohon Maaf, untuk sementara varian 2 belum tersedia");
+                jenisPesananRoti.remove("pizza");
                 inputContinue2();
             }else if(AlurPesanRoti.variant.equals("3")){
                 System.out.println("Mohon Maaf, untuk sementara varian 3 belum tersedia");
+                jenisPesananRoti.remove("pizza");
                 inputContinue2();
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
@@ -154,23 +198,5 @@ public class AlurPesanRoti {
         }
     }
 
-//    public static void inputContinue3(){
-//        while (true) {
-//            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
-//            Tampilan.yesOrNo = Tampilan.inputUser.next().toLowerCase();
-//            if (Tampilan.yesOrNo.equals("y")) {
-//                isContinue4 = false;
-//                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-//                break;
-//            } else if (!(Tampilan.yesOrNo.equals("n")) && !(Tampilan.yesOrNo.equals("y"))) {
-//                System.out.println("Maaf, input Anda salah");
-//            } else if(Tampilan.yesOrNo.equals("n")){
-//                test = false;
-//                isContinue4 = false;
-//                isContinue = false;
-//                isContinue2 = false;
-//                break;
-//            }
-//        }
-//    }
+
 }

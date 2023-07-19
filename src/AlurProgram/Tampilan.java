@@ -56,12 +56,12 @@ public class Tampilan {
 
     static Scanner inputUser = new Scanner(System.in);
     String[][] menu = new String[][]{{"Toko Roti - Dearby", "MENU"},
-            {"Roti Manis", "Roti Tawar", "Pizza"}, {"Varian 1", "Varian 2", "Varian 3"},{"Filling : Keju + Coklat", "Filling : Coklat", "Filling : -"}, {"Topping : Coklat", "Topping : -", "Topping : Keju + Sosis + Smoked Beef + Bawang Bombay"}};
+            {"Roti Manis", "Roti Tawar", "Pizza"}, {"Varian 1", "Varian 2", "Varian 3"}, {"Filling : Keju + Coklat", "Filling : Coklat", "Filling : -"}, {"Topping : Coklat", "Topping : -", "Topping : Keju + Sosis + Smoked Beef + Bawang Bombay"}};
     String[][] menu2 = new String[][]{
             {"Filling : Read Bean", "Filling : Keju"}, {"Topping : Krim Vanila", "Topping : -"}, {"Varian 3", "Filling : Keju + Sosis", "Topping : -"}
     };
 
-    public void tampilan(){
+    public void tampilan() {
         DecimalFormat kursIndonesia = (DecimalFormat) DecimalFormat.getCurrencyInstance();
         DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
 
@@ -71,22 +71,22 @@ public class Tampilan {
 
         kursIndonesia.setDecimalFormatSymbols(formatRp);
         System.out.println("###########################################################################################################################################################################");
-        System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%s\n",  menu[0][0]);
+        System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%s\n", menu[0][0]);
         System.out.println("__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__--__-");
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t --------");
-        System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t|  %s  |\n",menu[0][1]);
+        System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t|  %s  |\n", menu[0][1]);
         System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t --------\n");
-        System.out.printf("\t\t\t%s \t\t\t\t\t\t\t\t\t\t\t\t %s \t\t\t\t\t\t\t\t\t\t\t\t %s\n", menu[1][0],menu[1][1],menu[1][2]);
+        System.out.printf("\t\t\t%s \t\t\t\t\t\t\t\t\t\t\t\t %s \t\t\t\t\t\t\t\t\t\t\t\t %s\n", menu[1][0], menu[1][1], menu[1][2]);
         System.out.println("\t\t------------------\t\t\t\t\t\t\t\t\t\t ------------------\t\t\t\t\t\t\t\t\t\t --------------------");
-        System.out.printf("\t\t\t%s\t\t\t\t\t\t\t\t\t\t\t\t %s\t\t\t\t\t\t\t\t\t\t\t\t\t%s\n",menu[2][0], menu[2][0], menu[2][0]);
+        System.out.printf("\t\t\t%s\t\t\t\t\t\t\t\t\t\t\t\t %s\t\t\t\t\t\t\t\t\t\t\t\t\t%s\n", menu[2][0], menu[2][0], menu[2][0]);
         System.out.print("\t\t================\t\t\t\t\t\t\t\t\t\t ================\t\t\t\t\t\t\t\t\t\t\t================\n");
         System.out.printf("\t%s\t\t\t\t\t\t\t\t\t%s\t\t\t\t\t\t\t\t\t\t%s\n", menu[3][0], menu[3][1], menu[3][2]);
-        System.out.printf("\t%s\t\t\t\t\t\t\t\t\t\t%s\t\t\t\t\t\t\t\t\t\t\t\t%s\n", menu[4][0],menu[4][1],menu[4][2]);
-        System.out.printf("\tHarga   : Rp%d\t\t\t\t\t\t\t\t\t\tHarga   : Rp%d\t\t\t\t\t\t\t\t\t\tHarga   : Rp%d\n",PcsRotiManisVarian1.hitungHargaTotalBulat(), PcsRotiManisVarian2.hitungHargaTotalBulat(), PcsRotiManisVarian3.hitungHargaTotalBulat());
+        System.out.printf("\t%s\t\t\t\t\t\t\t\t\t\t%s\t\t\t\t\t\t\t\t\t\t\t\t%s\n", menu[4][0], menu[4][1], menu[4][2]);
+        System.out.printf("\tHarga   : Rp%d\t\t\t\t\t\t\t\t\t\tHarga   : Rp%d\t\t\t\t\t\t\t\t\t\tHarga   : Rp%d\n", PcsRotiManisVarian1.hitungHargaTotalBulat(), PcsRotiManisVarian2.hitungHargaTotalBulat(), PcsRotiManisVarian3.hitungHargaTotalBulat());
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("\t\t\t%s\t\t\t\t\t\t\t\t\t\t\t\t %s\t\t\t\t\t\t\t\t\t\t\t\t[ Tidak Tersedia ]\n", menu[2][1], menu[2][1]);
         System.out.print("\t\t================\t\t\t\t\t\t\t\t\t\t ================\n");
-        System.out.printf("\t%s\t\t\t\t\t\t\t\t\t\t%s\n",menu2[0][0], menu2[0][1]);
+        System.out.printf("\t%s\t\t\t\t\t\t\t\t\t\t%s\n", menu2[0][0], menu2[0][1]);
         System.out.printf("\t%s\t\t\t\t\t\t\t\t\t%s\n", menu2[1][0], menu2[1][1]);
         System.out.printf("\tHarga   : Rp%d\t\t\t\t\t\t\t\t\t\tHarga   : Rp%d\n", PcsRotiTawarVarian1.hitungHargaTotalBulat(), PcsRotiTawarVarian2.hitungHargaTotalBulat());
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -96,18 +96,18 @@ public class Tampilan {
         System.out.printf("\t%s\n", menu2[2][2]);
         System.out.printf("\tHarga   : Rp%d\n", PcsPizzaVarian1.hitungHargaTotalBulat());
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        while(true) {
+        while (true) {
             System.out.print("\nMasukkan nama Anda \t\t\t\t\t\t : ");
             name = inputUser.nextLine();
-            if(name.contains("-") || name.contains("~") || name.contains("`")|| name.contains("!")|| name.contains("@")|| name.contains("#")|| name.contains("$")|| name.contains("%")|| name.contains("^")|| name.contains("&")|| name.contains("*")|| name.contains("(")|| name.contains(")")|| name.contains("_")|| name.contains("=")|| name.contains("+")|| name.contains("{")|| name.contains("[")|| name.contains("}")|| name.contains("]")|| name.contains("|")|| name.contains("\\")|| name.contains(";")|| name.contains(":")|| name.contains("\"")|| name.contains("'")|| name.contains("<")|| name.contains(",")|| name.contains(".")|| name.contains(">")|| name.contains("?")|| name.contains("/")){
+            if (name.contains("-") || name.contains("~") || name.contains("`") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("}") || name.contains("]") || name.contains("|") || name.contains("\\") || name.contains(";") || name.contains(":") || name.contains("\"") || name.contains("'") || name.contains("<") || name.contains(",") || name.contains(".") || name.contains(">") || name.contains("?") || name.contains("/")) {
                 System.out.println("Nama harus valid");
             } else if (name.matches(".*\\d+.*")) {
                 System.out.println("Nama tidak valid");
-            } else{
+            } else {
                 break;
             }
         }
-        while(isContinue3) {
+        while (isContinue3) {
             while (test) {
                 System.out.print("Mau Pesan roti apa ? (manis/tawar/pizza) : ");
                 Tampilan.jenisRoti = inputUser.next().toLowerCase();
@@ -119,17 +119,14 @@ public class Tampilan {
                     if (jenisRoti.equals("manis")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.RotiManis();
-                        inputContinue2();
                         break;
                     } else if (jenisRoti.equals("tawar")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.RotiTawar();
-                        inputContinue2();
                         break;
                     } else if (jenisRoti.equals("pizza")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.Pizza();
-                        inputContinue2();
                         break;
                     } else {
                         System.out.println("Mohon maaf, jenis roti tersebut belum tersedia di toko kami");
@@ -138,6 +135,10 @@ public class Tampilan {
                 }
             }
             if (!isContinue) {
+//                System.out.println(kumpulanBiaya);
+//                System.out.println(jenisPesananRoti);
+//                System.out.println(jenisPesananVarian);
+//                System.out.println(jumlahPesananRoti);
                 if (kumpulanBiaya.toArray().length == 1) {
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                     if (Tampilan.getJenisRoti().equals("pizza")) {
@@ -215,9 +216,10 @@ public class Tampilan {
         }
     }
 
+
     public static void inputContinue(){
         while (true) {
-            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
+            System.out.print("Mau pesan roti lagi ? fase 1 (Y/N) \t\t\t : ");
             yesOrNo = inputUser.next().toLowerCase();
             if (yesOrNo.equals("y")) {
                 System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
@@ -234,7 +236,7 @@ public class Tampilan {
     }
     public static void inputContinue2(){
         while (true) {
-            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
+            System.out.print("Mau pesan roti lagi ? fase 2(Y/N) \t\t\t : ");
             yesOrNo = inputUser.next().toLowerCase();
             if (yesOrNo.equals("y")) {
                 System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
