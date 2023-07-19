@@ -27,10 +27,12 @@ public class Tampilan {
     static ArrayList<Integer> jenisPesananVarian = new ArrayList<>();
     static ArrayList<Integer> jumlahPesananRoti = new ArrayList<>();
 
-    String yesOrNo;
+    static String yesOrNo;
     static int nominalPembayaran;
-    boolean isContinue = true;
-    boolean isContinue2 = true;
+    static boolean test = true;
+    static boolean isContinue = true;
+    static boolean isContinue2 = true;
+    static boolean isContinue3 = true;
 
     public static String getVarianRoti() {
         return varianRoti;
@@ -105,52 +107,43 @@ public class Tampilan {
                 break;
             }
         }
-        while(true) {
-            boolean test = true;
-            while(test) {
+        while(isContinue3) {
+            while (test) {
                 System.out.print("Mau Pesan roti apa ? (manis/tawar/pizza) : ");
                 Tampilan.jenisRoti = inputUser.next().toLowerCase();
-                if(name.contains("-") || name.contains("~") || name.contains("`")|| name.contains("!")|| name.contains("@")|| name.contains("#")|| name.contains("$")|| name.contains("%")|| name.contains("^")|| name.contains("&")|| name.contains("*")|| name.contains("(")|| name.contains(")")|| name.contains("_")|| name.contains("=")|| name.contains("+")|| name.contains("{")|| name.contains("[")|| name.contains("}")|| name.contains("]")|| name.contains("|")|| name.contains("\\")|| name.contains(";")|| name.contains(":")|| name.contains("\"")|| name.contains("'")|| name.contains("<")|| name.contains(",")|| name.contains(".")|| name.contains(">")|| name.contains("?")|| name.contains("/")){
+                if (name.contains("-") || name.contains("~") || name.contains("`") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("}") || name.contains("]") || name.contains("|") || name.contains("\\") || name.contains(";") || name.contains(":") || name.contains("\"") || name.contains("'") || name.contains("<") || name.contains(",") || name.contains(".") || name.contains(">") || name.contains("?") || name.contains("/")) {
                     System.out.println("Mohon Input jenis roti yang telah tersedia!");
                 } else if (Tampilan.jenisRoti.matches(".*\\d+.*")) {
                     System.out.println("Input Anda tidak sesuai dengan jenis Roti yang telah tersedia!");
-                } else{
-                   test = false;
+                } else {
+                    if (jenisRoti.equals("manis")) {
+                        Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
+                        AlurPesanRoti.RotiManis();
+                        inputContinue2();
+                        break;
+                    } else if (jenisRoti.equals("tawar")) {
+                        Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
+                        AlurPesanRoti.RotiTawar();
+                        inputContinue2();
+                        break;
+                    } else if (jenisRoti.equals("pizza")) {
+                        Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
+                        AlurPesanRoti.Pizza();
+                        inputContinue2();
+                        break;
+                    } else {
+                        System.out.println("Mohon maaf, jenis roti tersebut belum tersedia di toko kami");
+                        inputContinue();
+                    }
                 }
             }
-            if (jenisRoti.equals("manis")) {
-                Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
-                AlurPesanRoti.RotiManis();
-            }else if (jenisRoti.equals("tawar")){
-                Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
-                AlurPesanRoti.RotiTawar();
-            }else if (jenisRoti.equals("pizza")){
-                Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
-                AlurPesanRoti.Pizza();
-            }else {
-                System.out.println("Mohon maaf, jenis roti tersebut belum tersedia di toko kami");
-            }
-            while(isContinue){
-                System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
-                this.yesOrNo = inputUser.next().toLowerCase();
-                if(this.yesOrNo.equals("y")){
-
-                    System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                    break;
-                } else if (!(this.yesOrNo.equals("n")) && !(this.yesOrNo.equals("y"))) {
-                    System.out.println("Maaf, input Anda salah");
-                }else{
-                    isContinue = false;
-                    break;
-                }
-            }
-            if(!isContinue) {
+            if (!isContinue) {
                 if (kumpulanBiaya.toArray().length == 1) {
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                    if(Tampilan.getJenisRoti().equals("pizza")){
+                    if (Tampilan.getJenisRoti().equals("pizza")) {
                         System.out.println(Tampilan.name + ", Anda memesan " + Tampilan.getJenisRoti().toUpperCase() + ", variant " + Tampilan.getVarianRoti() + ", dengan jumlah " + Tampilan.getJumlahRoti() + " pcs");
                         System.out.printf("Total Bahan : \n%s\n", bahanAdonan.get(0));
-                    }else {
+                    } else {
                         System.out.println(Tampilan.name + ", Anda memesan Roti " + Tampilan.getJenisRoti().toUpperCase() + ", variant " + Tampilan.getVarianRoti() + ", dengan jumlah " + Tampilan.getJumlahRoti() + " pcs");
                         System.out.printf("Total Bahan : \n%s\n", bahanAdonan.get(0));
                     }
@@ -160,9 +153,9 @@ public class Tampilan {
                     while (isContinue2) {
                         System.out.print("Masukkan nominal pembayaran Anda : ");
                         nominalPembayaran = inputUser.nextInt();
-                        if(nominalPembayaran < 0){
+                        if (nominalPembayaran < 0) {
                             System.out.println("Maaf, Input harus positif!");
-                        }else if (nominalPembayaran == 0) {
+                        } else if (nominalPembayaran == 0) {
                             System.out.println("Input Anda 0!");
                         } else if (nominalPembayaran < Tampilan.kumpulanBiaya.get(0)) {
                             System.out.printf("Maaf, Nominal Anda kurang : %s %n", kursIndonesia.format(Math.abs(Tampilan.nominalPembayaran - Tampilan.kumpulanBiaya.get(0))));
@@ -180,10 +173,10 @@ public class Tampilan {
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
                     System.out.println(Tampilan.name + ", Anda memesan : ");
                     for (int i = 0; i < jenisPesananRoti.toArray().length; i++) {
-                        if(jenisPesananRoti.get(i).equals("pizza")){
+                        if (jenisPesananRoti.get(i).equals("pizza")) {
                             System.out.printf("=> %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i).toUpperCase(), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
                             System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
-                        }else{
+                        } else {
                             System.out.printf("=> Roti %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i).toUpperCase(), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
                             System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
                         }
@@ -197,7 +190,7 @@ public class Tampilan {
                     while (isContinue2) {
                         System.out.print("Masukkan nominal pembayaran Anda : ");
                         nominalPembayaran = inputUser.nextInt();
-                        if(nominalPembayaran < 0){
+                        if (nominalPembayaran < 0) {
                             System.out.println("Maaf, Input harus positif!");
                         } else if (nominalPembayaran == 0) {
                             System.out.println("Input Anda 0!");
@@ -213,10 +206,43 @@ public class Tampilan {
                     }
                 }
             }
-            if(!isContinue2){
+            if (yesOrNo.equals("n")) {
                 System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
                 System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTerima kasih, silakan berkunjung kembali :)\n");
                 System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+                break;
+            }
+        }
+    }
+
+    public static void inputContinue(){
+        while (true) {
+            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
+            yesOrNo = inputUser.next().toLowerCase();
+            if (yesOrNo.equals("y")) {
+                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+                break;
+            } else if (!(yesOrNo.equals("n")) && !(yesOrNo.equals("y"))) {
+                System.out.println("Maaf, input Anda salah");
+            } else if(yesOrNo.equals("n")){
+                test = false;
+                isContinue = false;
+                isContinue2 = false;
+                break;
+            }
+        }
+    }
+    public static void inputContinue2(){
+        while (true) {
+            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
+            yesOrNo = inputUser.next().toLowerCase();
+            if (yesOrNo.equals("y")) {
+                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+                break;
+            } else if (!(yesOrNo.equals("n")) && !(yesOrNo.equals("y"))) {
+                System.out.println("Maaf, input Anda salah");
+            } else if(yesOrNo.equals("n")){
+                isContinue = false;
                 break;
             }
         }

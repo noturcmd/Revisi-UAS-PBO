@@ -5,11 +5,13 @@ import JumlahBahanYangDibutuhkan.*;
 
 import java.util.ArrayList;
 
+import static AlurProgram.Tampilan.*;
 import static java.lang.String.format;
 
 
 public class AlurPesanRoti {
     static String variant;
+    static boolean isContinue4 = true;
     static BahanYangDibutuhkanRotiManis bahanRotiManis = new BahanYangDibutuhkanRotiManis();
     static BahanYangDibutuhkanRotiTawar bahanRotiTawar = new BahanYangDibutuhkanRotiTawar();
     static BahanYangDibutuhkanPizza bahanPizza = new BahanYangDibutuhkanPizza();
@@ -20,7 +22,7 @@ public class AlurPesanRoti {
     static BahanTopFilDibutuhkanRotiTawarV2 bahanTopFilRotarv2 = new BahanTopFilDibutuhkanRotiTawarV2();
     static BahanTopFilDibutuhkanPizzaV1 bahanTopFilPizzav1 = new BahanTopFilDibutuhkanPizzaV1();
     public static void  RotiManis() {
-        while(true) {
+        while(isContinue) {
             System.out.print("Varian \t\t\t\t\t\t\t\t\t : ");
             AlurPesanRoti.variant = Tampilan.inputUser.next();
             if (!(AlurPesanRoti.variant.equals("1")) && !(AlurPesanRoti.variant.equals("2")) && !(AlurPesanRoti.variant.equals("3"))) {
@@ -74,11 +76,11 @@ public class AlurPesanRoti {
                 break;
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
-            }
+            }break;
         }
     }
     public static void  RotiTawar() {
-        while(true) {
+        while(isContinue4) {
             System.out.print("Varian \t\t\t\t\t\t\t\t\t : ");
             AlurPesanRoti.variant = Tampilan.inputUser.next();
             if (!(AlurPesanRoti.variant.equals("1")) && !(AlurPesanRoti.variant.equals("2")) && !(AlurPesanRoti.variant.equals("3"))) {
@@ -110,14 +112,15 @@ public class AlurPesanRoti {
                 break;
             } else if(AlurPesanRoti.variant.equals("3")){
                 System.out.println("Mohon Maaf, untuk sementara varian 3 belum tersedia");
-                break;
+                inputContinue2();
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
             }
+            break;
         }
     }
     public static void Pizza() {
-        while(true) {
+        while(isContinue4) {
             System.out.print("Varian \t\t\t\t\t\t\t\t\t : ");
             AlurPesanRoti.variant = Tampilan.inputUser.next();
             if (!(AlurPesanRoti.variant.equals("1")) && !(AlurPesanRoti.variant.equals("2")) && !(AlurPesanRoti.variant.equals("3"))) {
@@ -140,13 +143,34 @@ public class AlurPesanRoti {
                 break;
             } else if(AlurPesanRoti.variant.equals("2")){
                 System.out.println("Mohon Maaf, untuk sementara varian 2 belum tersedia");
-                break;
+                inputContinue2();
             }else if(AlurPesanRoti.variant.equals("3")){
                 System.out.println("Mohon Maaf, untuk sementara varian 3 belum tersedia");
-                break;
+                inputContinue2();
             }else {
                 System.out.println("Input tidak boleh 0 atau negatif!");
             }
+            break;
         }
     }
+
+//    public static void inputContinue3(){
+//        while (true) {
+//            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
+//            Tampilan.yesOrNo = Tampilan.inputUser.next().toLowerCase();
+//            if (Tampilan.yesOrNo.equals("y")) {
+//                isContinue4 = false;
+//                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+//                break;
+//            } else if (!(Tampilan.yesOrNo.equals("n")) && !(Tampilan.yesOrNo.equals("y"))) {
+//                System.out.println("Maaf, input Anda salah");
+//            } else if(Tampilan.yesOrNo.equals("n")){
+//                test = false;
+//                isContinue4 = false;
+//                isContinue = false;
+//                isContinue2 = false;
+//                break;
+//            }
+//        }
+//    }
 }
