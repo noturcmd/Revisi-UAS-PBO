@@ -147,8 +147,14 @@ public class Tampilan {
             if(!isContinue) {
                 if (kumpulanBiaya.toArray().length == 1) {
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                    System.out.println(Tampilan.name + ", Anda memesan Roti " + Tampilan.getJenisRoti() + ", variant " + Tampilan.getVarianRoti() + ", dengan jumlah " + Tampilan.getJumlahRoti() + " pcs");
-                    System.out.printf("Total Bahan : \n%s\n", bahanAdonan.get(0));
+                    if(Tampilan.getJenisRoti().equals("pizza")){
+                        System.out.println(Tampilan.name + ", Anda memesan " + Tampilan.getJenisRoti().toUpperCase() + ", variant " + Tampilan.getVarianRoti() + ", dengan jumlah " + Tampilan.getJumlahRoti() + " pcs");
+                        System.out.printf("Total Bahan : \n%s\n", bahanAdonan.get(0));
+                    }else {
+                        System.out.println(Tampilan.name + ", Anda memesan Roti " + Tampilan.getJenisRoti().toUpperCase() + ", variant " + Tampilan.getVarianRoti() + ", dengan jumlah " + Tampilan.getJumlahRoti() + " pcs");
+                        System.out.printf("Total Bahan : \n%s\n", bahanAdonan.get(0));
+                    }
+                    System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                     System.out.println("Harga : " + kursIndonesia.format(Tampilan.kumpulanBiaya.get(0)));
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                     while (isContinue2) {
@@ -174,11 +180,11 @@ public class Tampilan {
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
                     System.out.println(Tampilan.name + ", Anda memesan : ");
                     for (int i = 0; i < jenisPesananRoti.toArray().length; i++) {
-                        if(Tampilan.jenisPesananRoti.get(i).matches("Pizza")){
-                            System.out.printf("=> %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
+                        if(jenisPesananRoti.get(i).equals("pizza")){
+                            System.out.printf("=> %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i).toUpperCase(), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
                             System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
                         }else{
-                            System.out.printf("=> Roti %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
+                            System.out.printf("=> Roti %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i).toUpperCase(), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
                             System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
                         }
                     }
