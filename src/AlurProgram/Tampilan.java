@@ -174,8 +174,13 @@ public class Tampilan {
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
                     System.out.println(Tampilan.name + ", Anda memesan : ");
                     for (int i = 0; i < jenisPesananRoti.toArray().length; i++) {
-                        System.out.printf("=> Roti %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
-                        System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
+                        if(Tampilan.jenisPesananRoti.get(i).matches("Pizza")){
+                            System.out.printf("=> %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
+                            System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
+                        }else{
+                            System.out.printf("=> Roti %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
+                            System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
+                        }
                     }
                     for (int hitungHargaTotal : kumpulanBiaya) {
                         this.totalHargaSeluruhnya += hitungHargaTotal;
