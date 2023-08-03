@@ -22,7 +22,7 @@ public class Tampilan {
     private static String jumlahRoti;
     private static String jenisRoti;
     int totalHargaSeluruhnya;
-    static ArrayList<Integer> kumpulanBiaya = new ArrayList<>();
+    static ArrayList<Long> kumpulanBiaya = new ArrayList<>();
     static ArrayList<String> jenisPesananRoti = new ArrayList<>();
     static ArrayList<Integer> jenisPesananVarian = new ArrayList<>();
     static ArrayList<Integer> jumlahPesananRoti = new ArrayList<>();
@@ -171,6 +171,8 @@ public class Tampilan {
                         }
                     }
                 } else if (kumpulanBiaya.toArray().length >= 2) {
+                    System.out.println(jenisPesananRoti);
+                    System.out.println(jenisPesananVarian);
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
                     System.out.println(Tampilan.name + ", Anda memesan : ");
                     for (int i = 0; i < jenisPesananRoti.toArray().length; i++) {
@@ -182,7 +184,7 @@ public class Tampilan {
                             System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
                         }
                     }
-                    for (int hitungHargaTotal : kumpulanBiaya) {
+                    for (long hitungHargaTotal : kumpulanBiaya) {
                         this.totalHargaSeluruhnya += hitungHargaTotal;
                     }
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
