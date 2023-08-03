@@ -178,7 +178,7 @@ public class Tampilan {
                             System.out.printf("=> %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i).toUpperCase(), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
                             System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
                         } else {
-                            System.out.printf("=> Roti %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i).toUpperCase(), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
+                            System.out.printf("=> ROTI %s, varian %s, jumlah %d pcs : %s %n", jenisPesananRoti.get(i).toUpperCase(), jenisPesananVarian.get(i), jumlahPesananRoti.get(i), kursIndonesia.format(Tampilan.kumpulanBiaya.get(i)));
                             System.out.printf("Total Bahan : \n%s\n\n", bahanAdonan.get(i));
                         }
                     }
@@ -219,7 +219,7 @@ public class Tampilan {
 
     public static void inputContinue(){
         while (true) {
-            System.out.print("Mau pesan roti lagi ? fase 1 (Y/N) \t\t\t : ");
+            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
             yesOrNo = inputUser.next().toLowerCase();
             if (yesOrNo.equals("y")) {
                 System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
@@ -236,7 +236,7 @@ public class Tampilan {
     }
     public static void inputContinue2(){
         while (true) {
-            System.out.print("Mau pesan roti lagi ? fase 2(Y/N) \t\t\t : ");
+            System.out.print("Mau pesan roti lagi ? (Y/N) \t\t\t : ");
             yesOrNo = inputUser.next().toLowerCase();
             if (yesOrNo.equals("y")) {
                 System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
