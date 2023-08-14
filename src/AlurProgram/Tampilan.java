@@ -97,7 +97,6 @@ public class Tampilan {
         System.out.printf("\tHarga   : Rp%d\n", PcsPizzaVarian1.hitungHargaTotalBulat());
         System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         while (true) {
-            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             System.out.print("\nMasukkan nama Anda \t\t\t\t\t\t : ");
             name = inputUser.nextLine();
             if (name.contains("-") || name.contains("~") || name.contains("`") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("}") || name.contains("]") || name.contains("|") || name.contains("\\") || name.contains(";") || name.contains(":") || name.contains("\"") || name.contains("'") || name.contains("<") || name.contains(",") || name.contains(".") || name.contains(">") || name.contains("?") || name.contains("/")) {
@@ -110,6 +109,7 @@ public class Tampilan {
         }
         while (isContinue3) {
             while (test) {
+                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                 System.out.print("Mau Pesan roti apa ? (manis/tawar/pizza) : ");
                 Tampilan.jenisRoti = inputUser.next().toLowerCase();
                 if (name.contains("-") || name.contains("~") || name.contains("`") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("}") || name.contains("]") || name.contains("|") || name.contains("\\") || name.contains(";") || name.contains(":") || name.contains("\"") || name.contains("'") || name.contains("<") || name.contains(",") || name.contains(".") || name.contains(">") || name.contains("?") || name.contains("/")) {
