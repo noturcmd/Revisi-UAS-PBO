@@ -119,23 +119,14 @@ public class Tampilan {
                     if (jenisRoti.equals("manis")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.RotiManis();
-                        System.out.println(jenisRoti);
-                        System.out.println(jenisPesananRoti);
-                        System.out.println(jenisPesananVarian);
                         break;
                     } else if (jenisRoti.equals("tawar")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.RotiTawar();
-                        System.out.println(jenisRoti);
-                        System.out.println(jenisPesananRoti);
-                        System.out.println(jenisPesananVarian);
                         break;
                     } else if (jenisRoti.equals("pizza")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.Pizza();
-                        System.out.println(jenisRoti);
-                        System.out.println(jenisPesananRoti);
-                        System.out.println(jenisPesananVarian);
                         break;
                     } else {
                         System.out.println("Mohon maaf, jenis roti tersebut belum tersedia di toko kami");
@@ -144,10 +135,6 @@ public class Tampilan {
                 }
             }
             if (!isContinue) {
-//                System.out.println(kumpulanBiaya);
-//                System.out.println(jenisPesananRoti);
-//                System.out.println(jenisPesananVarian);
-//                System.out.println(jumlahPesananRoti);
                 if (kumpulanBiaya.toArray().length == 1) {
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                     if (Tampilan.getJenisRoti().equals("pizza")) {
@@ -180,8 +167,6 @@ public class Tampilan {
                         }
                     }
                 } else if (kumpulanBiaya.toArray().length >= 2) {
-                    System.out.println(jenisPesananRoti);
-                    System.out.println(jenisPesananVarian);
                     System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
                     System.out.println(Tampilan.name + ", Anda memesan : ");
                     for (int i = 0; i < jenisPesananRoti.toArray().length; i++) {
