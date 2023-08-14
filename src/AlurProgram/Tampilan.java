@@ -58,7 +58,7 @@ public class Tampilan {
     String[][] menu = new String[][]{{"Toko Roti - Dearby", "MENU"},
             {"Roti Manis", "Roti Tawar", "Pizza"}, {"Varian 1", "Varian 2", "Varian 3"}, {"Filling : Keju + Coklat", "Filling : Coklat", "Filling : -"}, {"Topping : Coklat", "Topping : -", "Topping : Keju + Sosis + Smoked Beef + Bawang Bombay"}};
     String[][] menu2 = new String[][]{
-            {"Filling : Read Bean", "Filling : Keju"}, {"Topping : Krim Vanila", "Topping : -"}, {"Varian 3", "Filling : Keju + Sosis", "Topping : -"}
+            {"Filling : Red Bean", "Filling : Keju"}, {"Topping : Krim Vanila", "Topping : -"}, {"Varian 3", "Filling : Keju + Sosis", "Topping : -"}
     };
 
     public void tampilan() {
