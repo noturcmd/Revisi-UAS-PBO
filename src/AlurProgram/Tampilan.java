@@ -119,14 +119,23 @@ public class Tampilan {
                     if (jenisRoti.equals("manis")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.RotiManis();
+                        System.out.println(jenisRoti);
+                        System.out.println(jenisPesananRoti);
+                        System.out.println(jenisPesananVarian);
                         break;
                     } else if (jenisRoti.equals("tawar")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.RotiTawar();
+                        System.out.println(jenisRoti);
+                        System.out.println(jenisPesananRoti);
+                        System.out.println(jenisPesananVarian);
                         break;
                     } else if (jenisRoti.equals("pizza")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
                         AlurPesanRoti.Pizza();
+                        System.out.println(jenisRoti);
+                        System.out.println(jenisPesananRoti);
+                        System.out.println(jenisPesananVarian);
                         break;
                     } else {
                         System.out.println("Mohon maaf, jenis roti tersebut belum tersedia di toko kami");
