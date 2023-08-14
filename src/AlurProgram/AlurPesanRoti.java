@@ -30,7 +30,7 @@ public class AlurPesanRoti {
                 System.out.println("Maaf, Input Anda salah");
                 jenisPesananRoti.remove(jenisPesananRoti.size() - 1);
                 Tampilan.inputContinue2();
-            } else if (AlurPesanRoti.variant.matches("[a-zA-Z]+")) {
+            } else if (!AlurPesanRoti.variant.matches("[0-9]+")) {
                 System.out.println("Maaf, harus inputan Angka!");
             } else if (AlurPesanRoti.variant.equals("1")) {
                 Tampilan.setVarianRoti(AlurPesanRoti.variant);
@@ -41,7 +41,7 @@ public class AlurPesanRoti {
                 while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
-                    if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")) {
+                    if(!Tampilan.getJumlahRoti().matches("[0-9]+")) {
                         System.out.println("Input jumlah harus angka!");
                     }else if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
@@ -62,7 +62,7 @@ public class AlurPesanRoti {
                 while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
-                    if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")) {
+                    if(!Tampilan.getJumlahRoti().matches("[0-9]+")) {
                         System.out.println("Input jumlah harus angka!");
                     }else if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
@@ -83,7 +83,7 @@ public class AlurPesanRoti {
                 while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
-                    if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")) {
+                    if(!Tampilan.getJumlahRoti().matches("[0-9]+")) {
                         System.out.println("Input jumlah harus angka!");
                     }else if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
@@ -117,7 +117,7 @@ public class AlurPesanRoti {
                 while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
-                    if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")) {
+                    if(!Tampilan.getJumlahRoti().matches("[0-9]+")) {
                         System.out.println("Input jumlah harus angka!");
                     }else if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
@@ -138,7 +138,7 @@ public class AlurPesanRoti {
                 while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
-                    if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")) {
+                    if(!Tampilan.getJumlahRoti().matches("[0-9]+")) {
                         System.out.println("Input jumlah harus angka!");
                     }else if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
@@ -177,7 +177,7 @@ public class AlurPesanRoti {
                 while(isContinue5) {
                     System.out.print("Jumlah Pcs \t\t\t\t\t\t\t\t : ");
                     Tampilan.setJumlahRoti(Tampilan.inputUser.next());
-                    if(Tampilan.getJumlahRoti().matches("[a-zA-Z]+")) {
+                    if(!Tampilan.getJumlahRoti().matches("[0-9]+")) {
                         System.out.println("Input jumlah harus angka!");
                     }else if(Integer.parseInt(Tampilan.getJumlahRoti()) <= 0){
                         System.out.println("Input tidak boleh negatif atau nol!");
