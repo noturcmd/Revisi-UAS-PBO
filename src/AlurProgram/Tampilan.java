@@ -99,21 +99,27 @@ public class Tampilan {
         while (true) {
             System.out.print("\nMasukkan nama Anda \t\t\t\t\t\t : ");
             name = inputUser.nextLine();
-            if (!name.matches("[a-zA-Z\\\\s,]+")) {
+            if (name.contains("-") || name.contains("~") || name.contains("`") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("}") || name.contains("]") || name.contains("|") || name.contains("\\") || name.contains(";") || name.contains(":") || name.contains("\"") || name.contains("'") || name.contains("<") || name.contains(",") || name.contains(".") || name.contains(">") || name.contains("?") || name.contains("/") || name.matches(".*\\d+.*")) {
                 System.out.println("\t\t-----------------------------------------------------------------------------------------");
                 System.out.println("\t\t|\t\t\t\tNama tidak valid karena mengandung karakter bukan alfabet!\t\t\t\t|");
                 System.out.println("\t\t-----------------------------------------------------------------------------------------");
             } else {
+                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                 break;
             }
         }
         while (isContinue3) {
             while (test) {
-                System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                 System.out.print("Mau Pesan roti apa ? (manis/tawar/pizza) : ");
                 Tampilan.jenisRoti = inputUser.next().toLowerCase();
-                if (!name.matches("[a-zA-Z]+(\\\\s[a-zA-Z]+)+")) {
-                    System.out.println("Mohon Input jenis roti yang telah tersedia!");
+                if (jenisRoti.contains("-") || jenisRoti.contains("~") || jenisRoti.contains("`") || jenisRoti.contains("!") || jenisRoti.contains("@") || jenisRoti.contains("#") || jenisRoti.contains("$") || jenisRoti.contains("%") || jenisRoti.contains("^") || jenisRoti.contains("&") || jenisRoti.contains("*") || jenisRoti.contains("(") || jenisRoti.contains(")") || jenisRoti.contains("_") || jenisRoti.contains("=") || jenisRoti.contains("+") || jenisRoti.contains("{") || jenisRoti.contains("[") || jenisRoti.contains("}") || jenisRoti.contains("]") || jenisRoti.contains("|") || jenisRoti.contains("\\") || jenisRoti.contains(";") || jenisRoti.contains(":") || jenisRoti.contains("\"") || jenisRoti.contains("'") || jenisRoti.contains("<") || jenisRoti.contains(",") || jenisRoti.contains(".") || jenisRoti.contains(">") || jenisRoti.contains("?") || jenisRoti.contains("/")) {
+                    System.out.println("\t\t-----------------------------------------------------------------------------------------");
+                    System.out.println("\t\t|\t\t\t\t\t\tMohon Input jenis roti yang telah tersedia!\t\t\t\t\t\t|");
+                    System.out.println("\t\t-----------------------------------------------------------------------------------------");
+                } else if (Tampilan.jenisRoti.matches(".*\\d+.*")) {
+                    System.out.println("\t\t-----------------------------------------------------------------------------------------");
+                    System.out.println("\t\t|\t\t\t\tInput Anda tidak sesuai dengan jenis Roti yang telah tersedia!\t\t\t|");
+                    System.out.println("\t\t-----------------------------------------------------------------------------------------");
                 } else {
                     if (jenisRoti.equals("manis")) {
                         Tampilan.jenisPesananRoti.add(Tampilan.jenisRoti);
