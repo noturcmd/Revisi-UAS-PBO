@@ -99,10 +99,10 @@ public class Tampilan {
         while (true) {
             System.out.print("\nMasukkan nama Anda \t\t\t\t\t\t : ");
             name = inputUser.nextLine();
-            if (name.contains("-") || name.contains("~") || name.contains("`") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("}") || name.contains("]") || name.contains("|") || name.contains("\\") || name.contains(";") || name.contains(":") || name.contains("\"") || name.contains("'") || name.contains("<") || name.contains(",") || name.contains(".") || name.contains(">") || name.contains("?") || name.contains("/")) {
-                System.out.println("Nama harus valid");
-            } else if (name.matches(".*\\d+.*")) {
-                System.out.println("Nama tidak valid");
+            if (name.contains("-") || name.contains("~") || name.contains("`") || name.contains("!") || name.contains("@") || name.contains("#") || name.contains("$") || name.contains("%") || name.contains("^") || name.contains("&") || name.contains("*") || name.contains("(") || name.contains(")") || name.contains("_") || name.contains("=") || name.contains("+") || name.contains("{") || name.contains("[") || name.contains("}") || name.contains("]") || name.contains("|") || name.contains("\\") || name.contains(";") || name.contains(":") || name.contains("\"") || name.contains("'") || name.contains("<") || name.contains(",") || name.contains(".") || name.contains(">") || name.contains("?") || name.contains("/") || name.matches(".*\\d+.*")) {
+                System.out.println("\t\t-----------------------------------------------------------------------------------------");
+                System.out.println("\t\t|\t\t\t\tNama tidak valid karena mengandung karakter bukan alfabet!\t\t\t\t|");
+                System.out.println("\t\t-----------------------------------------------------------------------------------------");
             } else {
                 break;
             }
